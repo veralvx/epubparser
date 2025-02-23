@@ -5,16 +5,16 @@ Parses epub files (wrapper around `ebooklib` package). Extract chapter titles an
 
 ## Installation
 
-You can install **epubparse** via pip:
+You can install **epubparser** via pip:
 
 ```bash
-pip install epubparse
+pip install epubparser
 ```
 
 ## Usage
 
 ```
-epubparse input.epub output.txt 
+epubparser input.epub output.txt 
 ```
 
 You can apply some arguments: 
@@ -28,7 +28,7 @@ Skip chapters whose titles match common License variants.
 The arguments above may not be perfect, since it depends on regex an language.
 
 `--extract-cover`
-extracts cover to covers directory. If this argument is passed, output fule must be specified as `None`
+extracts cover to covers directory. If this argument is passed, output file must be specified as `None`
 
 
 ## License
