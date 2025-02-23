@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project.scripts]
+epubparser = "epubparser.main:main"
+
+
+[project]
+name = "epubparser"
+version = "0.1.0"
+#dynamic = ["version"]
+authors = [
+  { name="lvxvvv" },
+]
+maintainers = [
+  {name = "lvxvvv"}
+]
+
+description = "Parse ebooks, extracts chapters and contents."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Topic :: Text Processing",
+    "Topic :: Text Processing :: Filters",
+    "Topic :: Text Processing :: General",
+    "Topic :: Text Processing :: Markup :: XML",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Topic :: Text Processing :: Markup"
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English"
+]
+
+
+keywords = ["epub", "ebook", "conversion", "filter"]
+
+dependencies = [
+  "ebooklib>=0.18,<0.20"
+]
+
+
+license = { file = "LICEN[CS]E*" }
+
+[project.urls]
+Homepage = "https://github.com/lvxvvv/epubparser"
+Repository = "https://github.com/lvxvvv/epubparser.git"
+Issues = "https://github.com/lvxvvv/epubparser/issues"
+Mastodon = "https://mastodon.social/@lvxvvv"
+Twitter = "https://x.com/lvxvvv"
+Changelog = "https://github.com/lvxvvv/epubparser/blob/main/CHANGELOG.md"

@@ -1,0 +1,36 @@
+# EpubParse
+
+Parses epub files. Extract chapter titles and their corresponding texts. Can also extract the cover image.
+
+
+## Installation
+
+You can install **epubparse** via pip:
+
+```bash
+pip install epubparse
+```
+
+## Usage
+
+```
+epubparse input.epub output.txt 
+```
+
+You can apply some arguments: 
+
+`--skip-toc`
+Skip chapters whose titles match common Table of Contents variants.
+
+`--skip-license`
+Skip chapters whose titles match common License variants.
+
+The arguments above may not be perfect, since it depends on regex an language.
+
+`--extract-cover`
+extracts cover to covers directory. If this argument is passed, output fule must be specified as `None`
+
+
+## License
+This project is licensed under the MIT License.
+
