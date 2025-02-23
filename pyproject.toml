@@ -38,7 +38,7 @@ classifiers = [
     "Topic :: Text Processing :: General",
     "Topic :: Text Processing :: Markup :: XML",
     "Topic :: Text Processing :: Markup :: HTML",
-    "Topic :: Text Processing :: Markup"
+    "Topic :: Text Processing :: Markup",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English"
 ]
