@@ -1,4 +1,4 @@
-# EpubParse
+# EpubParser
 
 Parses epub files (wrapper around `ebooklib` package). Extract chapter titles and their corresponding texts. Can also extract the cover image.
 
