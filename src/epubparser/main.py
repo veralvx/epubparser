@@ -241,6 +241,20 @@ def get_title(book=book):
 
     return book_titles[0][0]
 
+def get_creator(book=book):
+    # Retrieve the 'creator' metadata (author)
+    authors = book.get_metadata('DC', 'creator')
+    authors_list = []
+    # get_metadata returns a list of tuples, e.g. [(author_name, {})]
+    for author, _ in authors:
+        authors_list.append(author)
+    
+    if len(authors_list) > 1:
+        return authors_list
+    else
+        return None
+
+    
 
 def get_content(book=book, skip_toc=False, skip_license=False):
    
@@ -335,3 +349,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
