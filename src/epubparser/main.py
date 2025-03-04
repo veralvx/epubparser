@@ -200,31 +200,12 @@ def extract_and_save_cover(book, epub_path):
     # Get image data
     image_data = cover_item.get_content()
 
-    # Check dimensions using PIL
-    #try:
-    #    with Image.open(io.BytesIO(image_data)) as img:
-    #        width, height = img.size
-    #except Exception as e:
-    #    print(f"Error processing image: {e}")
-    #    return
-
-    # Check if aspect ratio is 1:1 (width == height)
-    #if width != height:
-    #    print("Cover image does not have a 1:1 aspect ratio, skipping.")
-    #    return
-
-    # Prepare to save the image
-    # Get the script's directory and create 'covers' subdirectory
-    script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-    covers_dir = os.path.join(script_dir, 'covers')
+    covers_dir = os.path.join(os.getcwd(), 'covers')
     if not os.path.exists(covers_dir):
         os.makedirs(covers_dir)
 
-    # Get the basename of the EPUB file (without extension)
     basename = os.path.splitext(os.path.basename(epub_path))[0]
-    # Get the extension from the cover image's file_name
     extension = os.path.splitext(cover_item.file_name)[1]
-    # Construct the output path
     output_file = os.path.join(covers_dir, f"{basename}{extension}")
 
     # Save the image data
@@ -251,7 +232,7 @@ def get_creator(book=book):
     
     if len(authors_list) > 1:
         return authors_list
-    else
+    else:
         return None
 
     
@@ -321,6 +302,7 @@ def main():
             title = get_title()
             return title
 
+        sys.exit()
 
     SKIP_TOC_VARIANTS = [
         "table of contents", "toc", "contents", "sumário", "indice", "índice",

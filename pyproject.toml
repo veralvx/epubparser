@@ -9,13 +9,13 @@ epubparser = "epubparser.main:main"
 
 [project]
 name = "epubparser"
-version = "0.1.0"
+version = "0.1.1"
 #dynamic = ["version"]
 authors = [
-  { name="lvxvvv" },
+  { name="veralvx" },
 ]
 maintainers = [
-  {name = "lvxvvv"}
+  {name = "veralvx"}
 ]
 
 description = "Parse ebooks, extracts chapters and contents."
@@ -54,9 +54,9 @@ dependencies = [
 license = { file = "LICEN[CS]E*" }
 
 [project.urls]
-Homepage = "https://github.com/lvxvvv/epubparser"
-Repository = "https://github.com/lvxvvv/epubparser.git"
-Issues = "https://github.com/lvxvvv/epubparser/issues"
-Mastodon = "https://mastodon.social/@lvxvvv"
-Twitter = "https://x.com/lvxvvv"
-Changelog = "https://github.com/lvxvvv/epubparser/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/veralvx/epubparser"
+Repository = "https://github.com/veralvx/epubparser.git"
+Issues = "https://github.com/veralvx/epubparser/issues"
+Mastodon = "https://mastodon.social/@veralvx"
+Twitter = "https://x.com/veralvx"
+Changelog = "https://github.com/veralvx/epubparser/blob/main/CHANGELOG.md"
