@@ -304,7 +304,7 @@ def main():
             print(title)
             return title
         if args.return_author:
-            author = get_creator
+            author = get_creator()
             print(author)
             return author
             
