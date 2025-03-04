@@ -278,6 +278,7 @@ def main():
     parser.add_argument("--return-title", action="store_true", help="Returns the book title")
     parser.add_argument("--return-dict", action="store_true", help="Returns a dictionary with chapters and text")
     parser.add_argument("--extract-cover", action="store_true", help="Extract and save the cover image if it has 1:1 aspect ratio")
+    parser.add_argument("--return-author", action="store_true", help="Return epub's author")
     parser.add_argument("--skip-toc", action="store_true",
                         help="Skip chapters whose title matches any Table of Contents variant")
     parser.add_argument("--skip-license", action="store_true",
@@ -300,8 +301,13 @@ def main():
             return rdict
         if args.return_title:
             title = get_title()
+            print(title)
             return title
-
+        if args.return_author:
+            author = get_creator
+            print(author)
+            return author
+            
         sys.exit()
 
     SKIP_TOC_VARIANTS = [
