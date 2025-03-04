@@ -1,6 +1,13 @@
+## 0.1.4 - 2025-03-04
+### Fix
+- Authors not being returned
+
 ## 0.1.3 - 2025-03-04
 ### Chore
 - Bump version
+
+### Docs
+- Update changelog
 
 ### Fix
 - Missing parenthesis in get_author call
