@@ -333,7 +333,19 @@ def main():
 
 
     with open(args.epub_path_output, "w") as file:
-        file.write(title + "\n\n")
+
+
+        value = os.getenv("EPUBPARSER_WRITE_BOOK_TITLE")
+        if value in ["", None]:
+            os.environ["EPUBPARSER_WRITE_BOOK_TITLE"] = "1"
+            value = "1"
+
+        try:
+            if int(value) == 1:
+                file.write(title + "\n\n")
+        except (ValueError, TypeError):
+            pass
+
         for key, value in book_vk.items():
             file.write(key + "\n\n")
             file.write(value + "\n\n")
