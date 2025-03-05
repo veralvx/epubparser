@@ -1,4 +1,11 @@
+## 0.1.5 - 2025-03-05
+### Feat
+- Env control for writing title
+
 ## 0.1.4 - 2025-03-04
+### Chore
+- Bump version
+
 ### Fix
 - Authors not being returned
 
