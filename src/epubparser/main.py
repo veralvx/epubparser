@@ -242,7 +242,9 @@ def get_creator(book=book):
 
 def get_content(book=book, skip_toc=False, skip_license=False):
    
+    counter = 0 
     for item in book.get_items():
+        counter += 1
         if item.get_type() == ITEM_DOCUMENT:
             try:
                 html_content = item.get_content().decode('utf-8', errors='replace')
@@ -263,8 +265,16 @@ def get_content(book=book, skip_toc=False, skip_license=False):
             
             if norm_title is None and chapter_text.strip() == "":
                 continue
+
+            if norm_title is None and chapter_text.strip() is not None:
+                norm_title = f"None{counter}"
             
-            book_vk[norm_title] = chapter_text.strip()
+            chapter_text_var = chapter_text.strip()
+
+            if norm_title is not None and chapter_text.strip() is None:
+                chapter_text_var = f"None{counter}"
+
+            book_vk[norm_title] = chapter_text_var
     
     return book_vk
 
@@ -347,6 +357,13 @@ def main():
             pass
 
         for key, value in book_vk.items():
+
+            if "None" in key:
+                key = ""
+            
+            if "None" in value:
+                value = ""
+                
             file.write(key + "\n\n")
             file.write(value + "\n\n")
 

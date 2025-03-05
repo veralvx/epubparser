@@ -9,7 +9,7 @@ epubparser = "epubparser.main:main"
 
 [project]
 name = "epubparser"
-version = "0.1.5"
+version = "0.1.6"
 #dynamic = ["version"]
 authors = [
   { name="veralvx" },
