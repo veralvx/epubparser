@@ -34,9 +34,24 @@ H2_WITH_ID_PATTERN = re.compile(r'<h2[^>]*id\s*=\s*["\']([^"\']+)["\'][^>]*>(.*?
 H2_PATTERN = re.compile(r'<h2[^>]*>(.*?)</h2>', re.IGNORECASE | re.DOTALL)
 CHAP_ID_PATTERN = re.compile(r'^(chap(?:ter)?\d*)$', re.IGNORECASE)
 
+P_END_REGEX = re.compile(r'</p>', re.IGNORECASE)
+
+
 def strip_tags(html):
     """Remove HTML tags using a compiled regex."""
     return TAG_REGEX.sub('', html)
+
+
+def process_html(html):
+    """Process HTML to replace </p> with \n\n, <br> with \n, and strip other tags."""
+    # Step 1: Replace </p> with \n\n for paragraph separation
+    html = P_END_REGEX.sub('\n', html)
+    # Step 2: Replace <br> with \n for line breaks within paragraphs
+    html = BR_REGEX.sub(' ', html)
+    # Step 3: Strip all remaining HTML tags
+    text = strip_tags(html)
+    return text
+
 
 def normalize_text(text):
     """
@@ -259,8 +274,10 @@ def get_content(book=book, skip_toc=False, skip_license=False):
                 continue
 
             # Extract plain text from the chapter content without altering its line breaks.
-            chapter_text = strip_tags(html_content)
+            chapter_text = process_html(html_content)
+          #  chapter_text = strip_tags(chapter_text)
             # Remove the chapter title (raw version) from the beginning of the chapter text if present.
+            
             chapter_text = remove_title_from_text(raw_title, chapter_text)
             
             if norm_title is None and chapter_text.strip() == "":
