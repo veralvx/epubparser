@@ -1,4 +1,11 @@
+## 0.1.7 - 2025-03-06
+### Fix
+- Proper paragraph division
+
 ## 0.1.6 - 2025-03-05
+### Chore
+- Bump version
+
 ### Fix
 - Chapters and content can be null
 
